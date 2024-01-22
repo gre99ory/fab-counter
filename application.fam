@@ -1,0 +1,15 @@
+App(
+    appid="fab_counter",
+    name="[WIP] FAB Life Counter",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="main_fab_counter",
+    stack_size=4 * 1024,
+    requires=[
+        "gui",
+    ],
+    order=10,
+    fap_icon="app.png",
+    fap_category="FAB",
+    fap_icon_assets="assets",
+    fap_description="Life counter for Flesh and Blood",
+)
