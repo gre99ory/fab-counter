@@ -19,12 +19,15 @@
 
 #define TAG "FABCOUNTER"
 
+void kindalog(char*);
+
 /**
  * @brief Scene List
  * 
  */
 typedef enum {
     AppSceneArena,
+    AppSceneAbout,
     // AppSceneSetVolume,
     // AppSceneSetFrequency,
     // AppSceneSummary,
@@ -58,9 +61,7 @@ typedef struct App {
     SceneManager* scene_manager;
     ViewDispatcher* view_dispatcher;
     Knob* knob;
-    /*
     Widget* widget;
-    */
     // App data
     float volume;
     float frequency;

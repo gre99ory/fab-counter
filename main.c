@@ -29,12 +29,14 @@ int32_t main_fab_counter(void* p) {
     App* app = app_alloc();
 
     // Show first scene
-    scene_manager_next_scene(app->scene_manager, AppSceneArena);
+    scene_manager_next_scene(app->scene_manager, AppSceneAbout);
     view_dispatcher_run(app->view_dispatcher);
 
     // Free resources
+    kindalog("free");
     app_free(app);
 
+    kindalog("return");
     return 0;
 }
 

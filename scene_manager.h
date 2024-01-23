@@ -2,6 +2,7 @@
 #define __SCENE_MANAGER_FAB_COUNTER__
 
 #include "scenes/arena.h"
+#include "scenes/about.h"
 
 extern const SceneManagerHandlers app_scene_handlers;
 

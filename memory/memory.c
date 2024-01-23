@@ -26,11 +26,11 @@ App* app_alloc() {
     view_dispatcher_set_navigation_event_callback(app->view_dispatcher, app_back_event_callback);
 
     // Create modules
-    // app->knob = knob_alloc();
-    // view_dispatcher_add_view(app->view_dispatcher, AppViewKnob, knob_get_view(app->knob));
+    app->knob = knob_alloc();
+    view_dispatcher_add_view(app->view_dispatcher, AppViewKnob, knob_get_view(app->knob));
 
-    // app->widget = widget_alloc();
-    // view_dispatcher_add_view(app->view_dispatcher, AppViewWidget, widget_get_view(app->widget));
+    app->widget = widget_alloc();
+    view_dispatcher_add_view(app->view_dispatcher, AppViewWidget, widget_get_view(app->widget));
 
     // Attach GUI and view dispatcher
     Gui* gui = furi_record_open(RECORD_GUI);
@@ -47,11 +47,11 @@ App* app_alloc() {
  */
 void app_free(App* app) {
     // Destroy modules
-    // view_dispatcher_remove_view(app->view_dispatcher, AppViewKnob);
-    // free(app->knob);
+    view_dispatcher_remove_view(app->view_dispatcher, AppViewKnob);
+    free(app->knob);
 
-    // view_dispatcher_remove_view(app->view_dispatcher, AppViewWidget);
-    // free(app->widget);
+    view_dispatcher_remove_view(app->view_dispatcher, AppViewWidget);
+    free(app->widget);
 
     // Destroy view dispatcher
     view_dispatcher_free(app->view_dispatcher);

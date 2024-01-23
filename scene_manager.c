@@ -7,6 +7,7 @@
  */
 void (*const app_on_enter_handlers[])(void*) = {
     app_scene_arena_on_enter,
+    app_scene_about_on_enter,
     // app_scene_volume_on_enter,
     // app_scene_frequency_on_enter,
     // app_scene_summary_on_enter,
@@ -14,6 +15,7 @@ void (*const app_on_enter_handlers[])(void*) = {
 
 bool (*const app_on_event_handlers[])(void*, SceneManagerEvent) = {
     app_scene_arena_on_event,
+    app_scene_about_on_event,
     // app_scene_volume_on_event,
     // app_scene_frequency_on_event,
     // app_scene_summary_on_event,
@@ -21,6 +23,7 @@ bool (*const app_on_event_handlers[])(void*, SceneManagerEvent) = {
 
 void (*const app_on_exit_handlers[])(void*) = {
     app_scene_arena_on_exit,
+    app_scene_about_on_exit,
     // app_scene_volume_on_exit,
     // app_scene_frequency_on_exit,
     // app_scene_summary_on_exit,
@@ -53,6 +56,7 @@ const SceneManagerHandlers app_scene_handlers = {
  */
 bool app_scene_custom_callback(void* context, uint32_t custom_event_id) {
     App* app = (App*)context;
+    kindalog("appCustomEvent");
     return scene_manager_handle_custom_event(app->scene_manager, custom_event_id);
 }
 
@@ -65,5 +69,6 @@ bool app_scene_custom_callback(void* context, uint32_t custom_event_id) {
  */
 bool app_back_event_callback(void* context) {
     App* app = (App*)context;
+    kindalog("appBackEvent");
     return scene_manager_handle_back_event(app->scene_manager);
 }

@@ -117,11 +117,20 @@ void knob_render_callback(Canvas* canvas, void* ctx) {
 // @ctx is a pointer to our Knob instance.
 //static
 bool knob_input_callback(InputEvent* input_event, void* ctx) {
+    //
+    // In scenes, args are ( Context, Event )?
+    //
     Knob* knob = (Knob*)ctx;
 
     bool handled = false;
+    //
+    // In scenes, var is 'consumed'
+    //
+
+    kindalog("knobInput");
 
     if(input_event->type == InputTypePress && input_event->key == InputKeyUp) {
+        kindalog("UP => --");
         bool updated = false;
         with_view_model(
             knob->view,
@@ -135,6 +144,7 @@ bool knob_input_callback(InputEvent* input_event, void* ctx) {
             updated);
         handled = true;
     } else if(input_event->type == InputTypePress && input_event->key == InputKeyDown) {
+        kindalog("DOWN => ++");
         with_view_model(
             knob->view,
             KnobModel * model,
@@ -142,6 +152,7 @@ bool knob_input_callback(InputEvent* input_event, void* ctx) {
             true); // Render new data.
         handled = true;
     } else if(input_event->type == InputTypePress && input_event->key == InputKeyOk) {
+        kindalog("OK => done");
         with_view_model(
             knob->view,
             KnobModel * model,
