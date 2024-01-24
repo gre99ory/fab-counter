@@ -28,10 +28,8 @@ void kindalog(char*);
 typedef enum {
     AppSceneArena,
     AppSceneAbout,
-    // AppSceneSetVolume,
-    // AppSceneSetFrequency,
-    // AppSceneSummary,
-    //
+    AppScenePlayerinfo,
+    // this enum must finish with AppSceneCount
     AppSceneCount,
 } appScenes;
 

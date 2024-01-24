@@ -1,6 +1,28 @@
 #ifndef __SCENE_MANAGER_FAB_COUNTER__
 #define __SCENE_MANAGER_FAB_COUNTER__
 
+/**
+ * @file scene_manager.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2024-01-24
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ * Adding a scene
+ * 
+ * Create <the_new_scene.h>
+ * Add scene in appScenes enum in main.h
+ * 
+ * Add include in scene_manager.h
+ * Add handlers in scene_manager.c
+ * 
+ * Create <the_new_scene.c>
+ * 
+ */
+
+#include "scenes/playerinfo.h"
 #include "scenes/arena.h"
 #include "scenes/about.h"
 

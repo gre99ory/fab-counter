@@ -32,7 +32,7 @@ bool app_scene_arena_on_event(void* context, SceneManagerEvent event) {
             uint32_t counter = knob_get_counter(app->knob);
             FURI_LOG_I(TAG, "The counter is %ld.", counter);
             app->frequency = counter;
-            scene_manager_next_scene(app->scene_manager, AppSceneAbout);
+            scene_manager_next_scene(app->scene_manager, AppScenePlayerinfo);
         }
     }
     return consumed;
